@@ -5,10 +5,10 @@ import { Mail, ArrowUp } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
-    <footer id="contact" className="bg-white dark:bg-slate-900 pt-16 pb-8 border-t border-slate-100 dark:border-slate-800">
+    <footer id="contact" className="bg-white pt-16 pb-8 border-t border-slate-100">
       <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-6 text-slate-900 dark:text-white">Let's Connect</h2>
-        <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">
+        <h2 className="text-3xl font-bold mb-6 text-slate-900">Let's Connect</h2>
+        <p className="text-slate-600 mb-8 text-lg">
           I'm currently available for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
         </p>
 
@@ -30,14 +30,14 @@ const Contact: React.FC = () => {
               rel="noopener noreferrer"
               aria-label={link.label}
             >
-              <div className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <div className="p-2 rounded-full hover:bg-slate-100 transition-colors">
                 {link.icon}
               </div>
             </a>
           ))}
         </div>
 
-        <div className="text-sm text-slate-500 dark:text-slate-600 pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="text-sm text-slate-500 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
           <p>© {new Date().getFullYear()} {PORTFOLIO_DATA.name}. All rights reserved.</p>
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

@@ -18,17 +18,17 @@ const Skills: React.FC = () => {
         {PORTFOLIO_DATA.skills.map((skillGroup, index) => (
           <div 
             key={index} 
-            className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 hover:border-accent/30 transition-colors"
+            className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:border-accent/30 transition-colors"
           >
             <div className="flex items-center gap-3 mb-4 text-accent">
               {getIcon(skillGroup.category)}
-              <h3 className="font-semibold text-lg text-slate-900 dark:text-white">{skillGroup.category}</h3>
+              <h3 className="font-semibold text-lg text-slate-900">{skillGroup.category}</h3>
             </div>
             <div className="flex flex-wrap gap-2">
               {skillGroup.items.map((item, idx) => (
                 <span 
                   key={idx} 
-                  className="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium hover:bg-accent hover:text-white dark:hover:bg-accent dark:hover:text-white transition-colors duration-200 cursor-default"
+                  className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition-colors duration-200 cursor-default"
                 >
                   {item}
                 </span>

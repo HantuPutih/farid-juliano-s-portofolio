@@ -1,11 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-interface ThreeBackgroundProps {
-  isDarkMode: boolean;
-}
-
-const ThreeBackground: React.FC<ThreeBackgroundProps> = ({ isDarkMode }) => {
+const ThreeBackground: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -21,9 +17,8 @@ const ThreeBackground: React.FC<ThreeBackgroundProps> = ({ isDarkMode }) => {
     // Scene setup
     const scene = new THREE.Scene();
     
-    // Update Fog to match the new App background colors
-    // Dark: #020617 (slate-950/black mix), Light: #f8fafc (slate-50)
-    const fogColor = isDarkMode ? 0x020617 : 0xf8fafc;
+    // Light mode fog: #f8fafc (slate-50)
+    const fogColor = 0xf8fafc;
     scene.fog = new THREE.Fog(fogColor, 5, 20);
 
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
@@ -55,8 +50,8 @@ const ThreeBackground: React.FC<ThreeBackgroundProps> = ({ isDarkMode }) => {
     
     const shapeCount = 12; // Fewer shapes, larger size for a cleaner look
 
-    // Colors: Blue/Cyan accent for dark mode, Slate/Blue mix for light mode
-    const mainColor = isDarkMode ? 0x3b82f6 : 0x64748b; 
+    // Color: Slate/Blue mix for light mode
+    const mainColor = 0x64748b; 
 
     for (let i = 0; i < shapeCount; i++) {
       const geometry = geometries[Math.floor(Math.random() * geometries.length)];
@@ -169,7 +164,7 @@ const ThreeBackground: React.FC<ThreeBackgroundProps> = ({ isDarkMode }) => {
       });
       renderer.dispose();
     };
-  }, [isDarkMode]);
+  }, []);
 
   return (
     <div 

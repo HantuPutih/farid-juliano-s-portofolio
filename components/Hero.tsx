@@ -4,11 +4,7 @@ import { ArrowDown, MapPin } from 'lucide-react';
 import ThreeBackground from './ThreeBackground';
 import gsap from 'gsap';
 
-interface HeroProps {
-  isDarkMode: boolean;
-}
-
-const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
+const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
 
@@ -49,28 +45,28 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
   return (
     <section ref={heroRef} className="min-h-screen flex flex-col justify-center items-center relative pt-20 px-4 text-center overflow-hidden">
       {/* 3D Background */}
-      <ThreeBackground isDarkMode={isDarkMode} />
+      <ThreeBackground />
 
       <div className="space-y-6 max-w-4xl z-10 relative">
         <div ref={addToRefs} className="inline-block px-4 py-2 rounded-full bg-accent/10 text-accent font-semibold text-sm mb-4 border border-accent/20 backdrop-blur-md shadow-sm">
           Available for Hire
         </div>
         
-        <h1 ref={addToRefs} className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white tracking-tight drop-shadow-sm">
+        <h1 ref={addToRefs} className="text-5xl md:text-7xl font-bold text-slate-900 tracking-tight drop-shadow-sm">
           Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-purple-600">{PORTFOLIO_DATA.name}</span>
         </h1>
         
-        <h2 ref={addToRefs} className="text-2xl md:text-3xl text-slate-700 dark:text-slate-200 font-medium drop-shadow-sm">
+        <h2 ref={addToRefs} className="text-2xl md:text-3xl text-slate-700 font-medium drop-shadow-sm">
           {PORTFOLIO_DATA.title}
         </h2>
 
-        <div ref={addToRefs} className="flex items-center justify-center text-slate-600 dark:text-slate-300 gap-2 text-lg drop-shadow-sm">
+        <div ref={addToRefs} className="flex items-center justify-center text-slate-600 gap-2 text-lg drop-shadow-sm">
           <MapPin className="w-5 h-5" />
           <span>{PORTFOLIO_DATA.contact.location}</span>
         </div>
 
         <div ref={addToRefs} className="mt-8">
-          <p className="max-w-2xl mx-auto text-slate-800 dark:text-slate-100 text-lg leading-relaxed bg-white/60 dark:bg-slate-900/60 backdrop-blur-md p-6 rounded-2xl border border-white/40 dark:border-slate-700/40 shadow-xl">
+          <p className="max-w-2xl mx-auto text-slate-800 text-lg leading-relaxed">
             {PORTFOLIO_DATA.summary}
           </p>
         </div>
@@ -82,10 +78,10 @@ const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-800 dark:text-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 border border-slate-200 dark:border-slate-700 group"
+              className="flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm text-slate-800 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200 border border-slate-200 group"
               aria-label={link.label}
             >
-              <div className="text-slate-600 dark:text-slate-400 group-hover:text-accent transition-colors">
+              <div className="text-slate-600 group-hover:text-accent transition-colors">
                 {link.icon}
               </div>
               <span className="font-medium">{link.label}</span>
