@@ -9,7 +9,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
   contact: {
     email: "faridjuliano.fj@gmail.com",
     phone: "+62 859-4689-0069",
-    location: "Jakarta, Indonesia",
+    location: "Serdang, Malaysia / Jakarta, Indonesia",
     linkedin: "https://linkedin.com/in/farid-juliano/",
     github: "https://github.com/HantuPutih"
   },
